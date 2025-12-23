@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure Sheet Access</title>
+
+<style>
+/* 🌈 Background */
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+
+/* 🧊 Glass Box */
+#box{
+  width:320px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  border-radius:16px;
+  padding:35px 25px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 15px 35px rgba(0,0,0,0.3);
+  animation:fadeIn 0.8s ease;
+}
+
+/* 🔒 Icon */
+#icon{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+/* 📝 Text */
+h3{
+  margin:10px 0;
+  font-weight:600;
+}
+
+p{
+  font-size:14px;
+  opacity:0.9;
+}
+
+/* 🔘 Button */
+button{
+  margin-top:20px;
+  width:100%;
+  padding:14px;
+  font-size:16px;
+  font-weight:600;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#00f2fe,#4facfe);
+  color:#003;
+  transition:all 0.3s ease;
+}
+
+button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ✨ Animation */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="box">
+  <div id="icon">🔐</div>
+  <h3>Protected Sheet</h3>
+  <p>Password required to access data</p>
+  <button onclick="openSheet()">Open Sheet</button>
+</div>
+
+<script>
+function openSheet(){
+  let password = prompt("🔑 Enter Password");
+
+  if(password === "8851199376"){
+    window.location.href =
+    "https://docs.google.com/spreadsheets/d/1rtYYSRo6516keW8Omlei2rbDQQOV2r22uEDbPQ4G4Gc/edit?usp=drivesdk";
+  }else{
+    alert("❌ Wrong Password");
+  }
+}
+</script>
+
+</body>
+</html>
